@@ -31,4 +31,5 @@ input::placeholder {
 
 #root{
   position: relative;
+  padding-top: 80px;
 }

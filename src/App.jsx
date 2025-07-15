@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Header from './includes/Header';
+import MainPage from './components/MainPage';
+import './reset.css';
 
 function App() {
 
@@ -8,7 +10,7 @@ function App() {
     <>
       <Header/>
       <Routes>
-        <Route path='/' element={<h3>main</h3>}/>
+        <Route path='/' element={<MainPage/>}/>
       </Routes>
     </>
   )

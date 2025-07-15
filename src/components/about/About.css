@@ -1,0 +1,156 @@
+
+#about{
+    height: calc(100vh - 80px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    background-color: rgb(246, 249, 255);
+}
+#about .title{
+    font-size: 60px;
+    font-weight: 800;
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #3a3a3a;
+}
+#about .container{
+    display: flex;
+    align-items: center;
+    height: 420px;
+}
+#about .container .profile{
+    align-self: flex-end;
+    height: 360px;
+    width: 240px;
+    background-color: #3a3a3a;
+    border-radius: 8px;
+    margin-right: 40px;
+    
+}
+
+#about .self-introduce{
+    border-radius: 10px;
+    height: 100%;
+    width: 500px;
+    box-shadow: 0 0 2px 2px #0000000f;
+    padding: 30px 24px;
+    margin-right: 40px;
+    transition: 0.1s;
+    background-color: #ffffff;
+}
+#about .self-introduce:hover{
+    scale: 1.01;
+    box-shadow: 0 0 4px 4px #00000026;
+}
+#about .self-introduce .name{
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #222222;
+}
+#about .self-introduce .name b{
+    font-weight: 800;
+    color: #000000;
+}
+#about .self-introduce .introduce{
+    font-size: 20px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 50px;
+}
+#about .self-introduce .sub-intoroduce li{
+    list-style: disc;
+
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#about .right{
+    width: 400px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#about .right > div{
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px #0000000f;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.1s;
+    background-color: #ffffff;
+}
+#about .right .contact{
+    height: calc(45% - 10px);
+}
+#about .right > div:hover{
+    scale: 1.01;
+    box-shadow: 0 0 4px 4px #00000026;
+}
+#about .contact > div{
+    display: flex;
+    align-items: center;
+}
+#about .contact > div svg{
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    fill: #333333;
+}
+#about .contact > div img{
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+#about .contact > div > p{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    width: 120px;
+}
+#about .contact > div > span{
+    color: #222222;
+    font-size: 16px;
+    font-weight: 400;
+}
+#about .contact > div > a{
+    color: #3a82ff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+#about .info-box{
+    height: calc(55% - 10px);
+}
+#about .info-box > div{
+    display: flex;
+    align-items: center;
+}
+#about .info-box > div > p{
+    width: 100px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+}
+#about .info-box > div > p > svg{
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+#about .info-box > div > div{
+    display: flex;
+    flex-direction: column;
+}
+#about .info-box > div > div > span{
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+#about .info-box > div > div > span:last-child{
+    margin-bottom: 0;
+}
