@@ -8,17 +8,17 @@ import "slick-carousel/slick/slick-theme.css";
 const projects = [
     {
         title: 'DoTogether(팀 프로젝트)',
-        summary: '간단한 요약 설명',
-        image: '/img/메인화면.PNG'
+        summary: '개인정보 암호화 저장, 개인 일정 관리, 팀 일정 공유, 웹소켓 기반 팀 채팅, 접근 로그 관리 기능을 구현한 협업 일정 관리 플랫폼',
+        image: '/img/dotogether/메인화면.PNG'
     },
     {
-        title: '프로젝트 2',
-        summary: '간단한 요약 설명',
-        image: '/img/project2.png'
+        title: 'Carlpion(팀 프로젝트)',
+        summary: '전기차 예약, 결제, 커뮤니티 게시판, JWT 기반 로그인 등 사용자 편의성과 보안을 고려한 웹 플랫폼',
+        image: '/img/Carlpion.PNG'
     },
     {
-        title: '프로젝트 3',
-        summary: '간단한 요약 설명',
+        title: 'Korplace(팀 프로젝트)',
+        summary: 'TourAPI 기반 전국 행사, 축제 정보 제공 + AI 플래너 기능으로 여행 일정 추천 서비스',
         image: '/img/project3.png'
     }
 ];

@@ -23,7 +23,7 @@
     background: #fff;
     border-radius: 22px;
     box-shadow: 0 4px 24px #a7c7ff33;
-    padding: 48px 40px;
+    padding: 40px 40px 20px;
     min-width: 1300px;
     max-width: 1300px;
     min-height: 100%;
@@ -34,6 +34,10 @@
     cursor: pointer;
     transition: box-shadow 0.2s, transform 0.2s;
     justify-content: center;
+}
+
+.project-card-large > h2{
+    margin-bottom: 20px;
 }
 
 .project-thumb-large {
