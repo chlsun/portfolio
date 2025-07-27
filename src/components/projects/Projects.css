@@ -1,22 +1,23 @@
 .projects-full {
-    min-height: calc(100vh - 80px);
-    height: calc(100vh - 80px);
+    min-height: calc(110vh - 80px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background: #f7f9fc;
-    padding: 40px 24px 0;
+    padding: 40px 24px 40px;
 }
 
 
 .carousel-slick-full {
     width: 100%;
     max-width: 80%; /* 더 넓게 */
-    height: 80vh;     /* 섹션의 70% 높이 */
+    max-height: 70vh;     /* 섹션의 70% 높이 */
     margin: 0 auto;
     display: block;
     position: relative;
+}
+.slick-slider, .slick-list, .slick-track{
+    max-height: 100%;
 }
 
 .project-card-large {
@@ -26,8 +27,8 @@
     padding: 40px 40px 20px;
     min-width: 1300px;
     max-width: 1300px;
-    min-height: 100%;
-    height: 100%; /* 슬라이드 높이 크게 */
+    min-height: 90%;
+    height: 90%; /* 슬라이드 높이 크게 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,4 +88,6 @@
 }
 .slick-track {
     display: flex !important;
+    align-items: center;
 }
+

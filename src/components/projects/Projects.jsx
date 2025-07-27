@@ -39,8 +39,37 @@ const Arrow = (props) => {
     );
 };
 
+const FollowDetail = ({ x, y, show }) => {
+    if (!show) return null;
+    return (
+        <div
+            className="follow-detail"
+            style={{
+                position: 'fixed',
+                left: x + 16,
+                top: y + 16,
+                pointerEvents: 'none',
+                background: '#7e839eff',
+                color: '#fff',
+                padding: '8px 14px',
+                borderRadius: '6px',
+                fontWeight: '700',
+                fontSize: '16px',
+                boxShadow: '0 2px 12px #a7c7ff44',
+                zIndex: 9999,
+                transition: 'opacity 0.15s',
+                opacity: show ? 1 : 0
+            }}
+        >
+            상세 정보 보기
+        </div>
+    );
+};
+
 const Projects = () => {
     const navigate = useNavigate();
+    const [hoverIdx, setHoverIdx] = useState(null);
+    const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
     const settings = {
         dots: true,
@@ -58,14 +87,31 @@ const Projects = () => {
         navigate(`/projects/${idx}`);
     };
 
+    const handleMouseMove = (e, idx) => {
+        setHoverIdx(idx);
+        setMouse({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseLeave = () => {
+        setHoverIdx(null);
+    };
+
     return (
         <section id="projects" className="projects-full">
             <h1 className="title">Projects</h1>
+            {/* 마우스 따라다니는 컴포넌트를 섹션 바로 아래에 렌더링 */}
+            {hoverIdx !== null && <FollowDetail x={mouse.x} y={mouse.y} show={true} />}
             <div className="carousel-slick-full">
                 <Slider {...settings}>
                     {projects.map((project, idx) => (
                         <div key={project.title}>
-                            <div className="project-card-large" onClick={() => handleCardClick(idx)}>
+                            <div
+                                className="project-card-large"
+                                onClick={() => handleCardClick(idx)}
+                                onMouseMove={e => handleMouseMove(e, idx)}
+                                onMouseLeave={handleMouseLeave}
+                                style={{ position: 'relative' }}
+                            >
                                 <img src={project.image} alt={project.title} className="project-thumb-large" />
                                 <h2>{project.title}</h2>
                                 <p>{project.summary}</p>

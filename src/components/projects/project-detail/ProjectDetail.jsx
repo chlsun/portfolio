@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './ProjectDetail.css';
 import DoTogetherMainFunctions from './main-function/DoTogetherMainFunctions';
 import DoTogetherTroubleshooting from './trouble-shooting/DoTogetherTroubleshooting';
+import Accordion from './components/Accordion';
 
 
 
@@ -69,21 +70,9 @@ const projects = [
     // ...다른 프로젝트
 ];
 
-const Accordion = ({ title, children }) => {
-    const [open, setOpen] = useState(false);
-    return (
-        <div className="accordion-section">
-            <button className="accordion-toggle" onClick={() => setOpen(!open)}>
-                <span>{title}</span>
-                <span className={`arrow ${open ? 'open' : ''}`}>▼</span>
-            </button>
-            {open && <div className="accordion-content">{children}</div>}
-        </div>
-    );
-};
-
 const ProjectDetail = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const project = projects[id];
 
     if (!project) return <div>존재하지 않는 프로젝트입니다.</div>;
@@ -94,6 +83,13 @@ const ProjectDetail = () => {
 
     return (
         <section className="project-detail-full">
+            <button
+                className="back-main-btn"
+                onClick={() => navigate('/')}
+            >
+                <span className="back-arrow" aria-hidden="true">←</span>
+                <span>메인으로 돌아가기</span>
+            </button>
             <h1 className="title">{project.title}</h1>
             <div className="project-info-section">
                 <div className="project-links">
@@ -146,10 +142,19 @@ const ProjectDetail = () => {
             </Accordion>
 
             <Accordion title="주요 배운점 & 개선 계획">
-                <div>
-                    <strong>배운점:</strong> {project.learnings}<br />
-                    <strong>개선 계획:</strong> {project.improvement}
-                </div>
+                <h2>주요 배운점</h2>
+                <p>
+                    이번 프로젝트를 통해 웹 소켓 기반의 실시간 통신 기능을 구현하며 <strong>멀티 스레드 환경에서의 동시성 문제</strong>를 직접 경험하고 처리하는 방법을 배울 수 있었습니다. 특히, 웹 소켓 통신은 일반적인 HTTP 요청과 달리 Spring Security 필터 체인에서도 예외가 아니기 때문에, <code>.requestMatchers("/ws/**").permitAll()</code> 와 같은 명시적인 보안 설정이 필요하다는 점도 알게 되었습니다.
+                    <br /><br />
+                    또한, CI/CD 파이프라인을 구성하고 실제 배포까지 경험해보면서, 개발된 기능이 운영 환경에서 안정적으로 동작하도록 만드는 전반적인 흐름과 중요성을 체감할 수 있었습니다.
+                </p>
+
+                <h2>개선 계획</h2>
+                <p>
+                    현재는 단순한 웹 소켓 통신 방식으로 구현했지만, 향후에는 <strong>STOMP 기반의 메시징 방식</strong>을 도입하여 구독/발행 모델을 활용한 더 안정적이고 확장 가능한 실시간 기능을 구현해보고 싶습니다.
+                    <br /><br />
+                    또한, 이번 프로젝트는 비교적 소수의 사용자를 가정하고 코드를 작성했지만, 실제 다수의 사용자가 동시에 접속하는 상황을 고려했을 때 발생할 수 있는 <br /> <strong>성능 문제와 동시성 이슈</strong>들을 보다 깊이 있게 파악하고 해결해보고자 합니다.
+                </p>
             </Accordion>
         </section>
     );

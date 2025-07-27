@@ -158,3 +158,32 @@
     border-top: 1px solid #e0eaff;
     font-size: 15px;
 }
+
+.back-main-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(58, 90, 255, 0.12);
+    color: #3a5aff;
+    border: 1.5px solid #3a5aff;
+    border-radius: 12px;
+    padding: 10px 22px;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #a7c7ff22;
+    transition: background 0.18s, color 0.18s, border 0.18s;
+    margin-bottom: 22px;
+}
+
+.back-main-btn:hover {
+    background: #3a5aff;
+    color: #fff;
+    border-color: #1a2a4a;
+}
+
+.back-arrow {
+    font-size: 22px;
+    font-weight: 900;
+    margin-right: 2px;
+}
