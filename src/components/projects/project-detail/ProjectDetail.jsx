@@ -4,12 +4,14 @@ import './ProjectDetail.css';
 import DoTogetherMainFunctions from './main-function/DoTogetherMainFunctions';
 import DoTogetherTroubleshooting from './trouble-shooting/DoTogetherTroubleshooting';
 import Accordion from './components/Accordion';
+import CarlpionMainFunctions from './main-function/CarlpionMainFunctions';
 
 
 
 // 프로젝트별 주요 기능/트러블슈팅 컴포넌트 매핑
 const mainFunctionComponents = {
     'DoTogether(팀 프로젝트)': DoTogetherMainFunctions,
+    'Carlpion(팀 프로젝트)': CarlpionMainFunctions,
     // 다른 프로젝트 추가
 };
 const troubleshootingComponents = {
@@ -49,25 +51,43 @@ const projects = [
             Communication: ['spring-websocket', 'AXIOS', 'REST API'],
             Deployment: ['AWS', 'Docker', 'S3'],
             VersionControl: ['Git', 'GitHub'],
-            Tools: ['IntelliJ', 'VS Code', 'Postman', 'DBeaver'],
+            Tools: ['STS4', 'VS Code', 'Postman', 'DBeaver'],
             Collaboration: ['Notion', 'Figma', 'Slack'],
             Library: ['react-dnd']
         },
         architecture: '/img/dotogether/아키텍쳐.png',
         flow: '/img/dotogether/DoTogether_UseCase.png',
-        mainFunctions: [
-            { title: '일정 관리', detail: '개인/팀 일정 등록, 수정, 삭제, 공유 기능' },
-            { title: '팀 채팅', detail: '웹소켓 기반 실시간 채팅' },
-            // ...추가 기능
-        ],
-        troubleshooting: [
-            { title: 'JWT 인증 오류', detail: '토큰 만료 시 자동 로그아웃 처리' },
-            // ...추가 트러블슈팅
-        ],
-        learnings: '보안 강화, 협업 경험, CI/CD 자동화 등',
-        improvement: 'UI 개선, 성능 최적화, 추가 기능 개발 등'
     },
-    // ...다른 프로젝트
+    {
+        title: 'Carlpion(팀 프로젝트)',
+        front: 'https://github.com/chlsun/Carlpion_client.git',
+        back: 'https://github.com/chlsun/Carlpion.git',
+        deploy: 'https://www.yoonseo.shop/',
+        period: '2025.04.09 ~ 2025.05.12',
+        overview: '본 프로젝트는 전기차 공유 예약 서비스와 커뮤니티 기능을 통합한 웹 플랫폼을 구축하는 것을 목표로 합니다. </br>사용자 간의 정보 교류와 차량 예약을 하나의 시스템에서 지원함으로써사용자의 편의성과 접근성을 높이고자 합니다. </br>React를 기반으로 직관적이고 반응성 높은 UI/UX를 설계하였으며, Spring Boot와 JWT 기반 인증 방식을 도입하여 보안성과 유지보수성을 강화하였습니다.</br> 또한, 전기차 중심의 공유 시스템을 통해 친환경적 이동 수단의 접근성을 높이고, 지속 가능한 모빌리티 생태계 조성에 기여하는 것을 목표로 합니다.',
+        features: [
+            '회원가입, 로그인(Spring Security + JWT), 구글 소셜 로그인, 아이디/비밀번호 찾기',
+            '회원탈퇴, 비밀번호/프로필/닉네임/이름 수정, 게시글/포인트 내역 조회',
+            '차량 모델/운용차량(위치) 관리, 예약 가능 차량 및 위치 조회',
+            '차량 렌트(결제), 사용자 예약 정보 관리',
+            '게시판 조회/작성/수정/삭제, 게시판 댓글'
+        ],
+        tech: {
+            ProgrammingLanguages: ['Java', 'JavaScript'],
+            Markup: ['HTML', 'CSS'],
+            Frameworks: ['Spring Boot', 'Spring Security', 'React'],
+            Database: ['Oracle', 'MyBatis', 'JDBC'],
+            Communication: ['AXIOS', 'REST API'],
+            Deployment: ['GCP', 'Docker', 'Firebase Hosting', 'Firebase Storage'],
+            VersionControl: ['Git', 'GitHub'],
+            Tools: ['STS4', 'VS Code', 'Postman', 'DBeaver'],
+            Collaboration: ['Notion', 'Figma', 'Slack'],
+            ExternalAPI: ['PortOne API (결제)', 'Kakao Maps API (지도)', 'Google OAuth (로그인)', '서울시 공공데이터 포털 (공영주차장 정보)']
+        },
+        architecture: '/img/carlpion/아키텍쳐.png',
+        flow: '/img/carlpion/Carlpion_UseCase.png',
+    },
+    
 ];
 
 const ProjectDetail = () => {

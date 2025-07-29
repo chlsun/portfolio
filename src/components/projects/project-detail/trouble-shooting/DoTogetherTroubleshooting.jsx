@@ -23,7 +23,7 @@ const DoTogetherTroubleshooting = () => (
             </p>
 
             <h2>문제 해결</h2>
-            <div>
+            <div className='trouble'>
                 <img src="/img/dotogether/trouble/문제코드.PNG" alt="" style={{width : "300px"}}/>
                 <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#111111"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
                 <img src="/img/dotogether/work/업무상태수정5.PNG" alt="" style={{width: "280px"}}/>

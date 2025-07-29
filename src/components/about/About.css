@@ -9,11 +9,20 @@
     background-color: rgb(246, 249, 255);
 }
 #about .title{
-    font-size: 60px;
+    font-size: 42px;
     font-weight: 800;
-    padding-bottom: 40px;
-    margin-bottom: 60px;
-    border-bottom: 1px solid #3a3a3a;
+    color: #2a3a5a;
+    margin-bottom: 38px;
+    letter-spacing: 2px;
+    text-align: center;
+    border-bottom: 2px solid #e0eaff;
+    padding-bottom: 30px;
+    width: 100%;
+    max-width: 400px;
+    background: none;
+    box-shadow: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 #about .container{
     display: flex;
@@ -22,12 +31,12 @@
 }
 #about .container .profile{
     align-self: flex-end;
-    height: 360px;
-    width: 240px;
+    height: 400px;
+    width: 310px;
     background-color: #3a3a3a;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-right: 40px;
-    
+    overflow: hidden;
 }
 
 #about .self-introduce{

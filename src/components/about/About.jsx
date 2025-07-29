@@ -8,7 +8,7 @@ const About = () =>{
             <h1 className="title">About Me</h1>
             <div className="container">
                 <div className="profile">
-                    <img src="/img/a프로필.jpg" alt="" />
+                    <img src="/img/증명사진.jpg" alt="" />
                 </div>
 
                 <div className="self-introduce">

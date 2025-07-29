@@ -1,10 +1,10 @@
 .projects-full {
-    min-height: calc(110vh - 80px);
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #f7f9fc;
-    padding: 40px 24px 40px;
+    padding: 100px 24px 80px;
 }
 
 
