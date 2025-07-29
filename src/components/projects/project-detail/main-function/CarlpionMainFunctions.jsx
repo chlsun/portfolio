@@ -121,6 +121,44 @@ const CarlpionMainFunctions = () => {
             </Accordion>
             <Accordion title={'차량 렌트(결제) ★★★'}>
                 <img src="/img/carlpion/차량렌트.gif" alt="" />
+                <h2>1. 차량 렌트(결제)</h2>
+                <ol type='a'>
+                    <li>PortOne API 결제 흐름도</li>
+                    <img src="/img/carlpion/rent/결제 흐름도.webp" alt="" />
+                    <p>-&gt; PortOne API를 사용한 결제는 보안을 위해 <b>사전 검증</b>과 <b>사후 검증</b>이 핵심</p>
+                    <p>-&gt; 사전 검증 단계에서는 차량 예약 가능 여부, 중복 예약 여부, 결제 금액의 정확성 등을 서버에서 먼저 확인하고, PortOne의 <b>prepare API</b>로 사전 등록</p>
+                    <p>-&gt; 사후 검증 단계에서는 결제 완료 후 전달받은 <b>imp_uid</b>로 결제 금액, 결제 상태를 서버에서 다시 확인하여 <b>위변조를 방지</b></p>
+
+                    <li>사전 검증</li>
+                    <img src="/img/carlpion/rent/사전검증1.PNG" alt="" style={{width : "450px"}} />
+                    <p>-&gt; 클라이언트에서는 차량 번호, 대여/반납 시간, merchantUid(주문번호)를 포함해 결제 준비 요청을 서버로 전송</p>
+                    <img src="/img/carlpion/rent/사전검증2.PNG" alt="" style={{width : "700px", marginTop : "20px"}} />
+                    <img src="/img/carlpion/rent/사전검증3.PNG" alt="" style={{width : "700px"}} />
+                    <p>-&gt; 서버에서는 차량의 기본요금(rentPrice), 시간당 요금(hourPrice)을 DB에서 조회한 후, 요청받은 대여/반납 시간을 기준으로 총 금액을 계산</p>
+                    <img src="/img/carlpion/rent/사전검증4.PNG" alt="" style={{width : "700px", marginTop : "20px"}} />
+                    <p>-&gt; 계산된 금액과 merchantUid를 매개변수로 결제 사전 등록 메서드 호출</p>
+                    <img src="/img/carlpion/rent/사전검증5.PNG" alt="" style={{width : "700px", marginTop : "20px"}} />
+                    <img src="/img/carlpion/rent/사전검증6.PNG" alt="" style={{width : "700px"}} />
+                    <p>-&gt; 이때 필요한 PortOne 인증 토큰은 restAPIKey와 secretKey로 <b>/users/getToken</b> API를 호출하여 발급</p>
+                    <p>-&gt; 이를 Authorization 헤더에 포함시켜 PortOne의 prepare API에 결제 사전 등록 요청</p>
+
+                    <li>사후 검증</li>
+                    <img src="/img/carlpion/rent/사후검증1.PNG" alt="" style={{width : "700px"}} />
+                    <p>-&gt; 클라이언트에서는 결제 완료 후 impUID, merchantUid, 대여/반납 시간 등과 함께 결제 완료 요청을 서버로 전송</p>
+
+                    <img src="/img/carlpion/rent/사후검증2.PNG" alt="" style={{width : "700px", marginTop : "20px"}} />
+                    <img src="/img/carlpion/rent/사후검증3.PNG" alt="" style={{width : "700px"}} />
+                    <p>-&gt; 서버에서는 impUID를 매개변수로 PortOne의 <code>/payments/&#123;imp_uid&#125;</code> API를 호출하여 결제 금액(paidAmount)과 결제 상태(status)를 조회</p>
+
+                    <img src="/img/carlpion/rent/사후검증4.PNG" alt="" style={{width : "700px", marginTop : "20px"}} />
+                    <p>-&gt; DB에서 차량의 rentPrice, hourPrice를 조회하고, 요청받은 대여/반납 시간을 기준으로 총 금액(expectedPrice) 계산</p>
+                    <p>-&gt; paidAmount와 expectedPrice를 비교하고, 결제 상태(status)가 "paid"인지 검증</p>
+                    <img src="/img/carlpion/rent/사후검증5.PNG" alt="" style={{width : "700px", marginTop : "20px"}} />
+                    <p>-&gt; 검증이 완료되면 예약 정보를 DB에 저장하고, 실패 시 예외 발생 또는 결제 취소 처리</p>
+                </ol>
+
+
+                
             </Accordion>
         </ul>
     );
