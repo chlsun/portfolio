@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './ProjectDetail.css';
 import DoTogetherMainFunctions from './main-function/DoTogetherMainFunctions';
@@ -134,6 +134,10 @@ const ProjectDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const project = projects[id];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     if (!project) return <div>존재하지 않는 프로젝트입니다.</div>;
 

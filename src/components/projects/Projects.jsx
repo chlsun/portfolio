@@ -16,11 +16,11 @@ const projects = [
         summary: '전기차 예약, 결제, 커뮤니티 게시판, JWT 기반 로그인 등 사용자 편의성과 보안을 고려한 웹 플랫폼',
         image: '/img/Carlpion.PNG'
     },
-    {
-        title: 'Korplace(팀 프로젝트)',
-        summary: 'TourAPI 기반 전국 행사, 축제 정보 제공 + AI 플래너 기능으로 여행 일정 추천 서비스',
-        image: '/img/project3.png'
-    }
+    // {
+    //     title: 'Korplace(팀 프로젝트)',
+    //     summary: 'TourAPI 기반 전국 행사, 축제 정보 제공 + AI 플래너 기능으로 여행 일정 추천 서비스',
+    //     image: '/img/project3.png'
+    // }
 ];
 
 // 커스텀 Arrow 컴포넌트

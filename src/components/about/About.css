@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 100px;
-    background-color: rgb(246, 249, 255);
+    background-color: #eff5fd;
 }
 #about .title{
     font-size: 42px;
@@ -65,8 +65,8 @@
 }
 #about .self-introduce .introduce{
     font-size: 20px;
-    font-weight: 400;
-    color: #333333;
+    font-weight: 500;
+    color: #222222;
     margin-bottom: 50px;
 }
 #about .self-introduce .sub-intoroduce li{
