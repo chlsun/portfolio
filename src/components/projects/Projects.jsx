@@ -9,12 +9,12 @@ const projects = [
     {
         title: 'DoTogether(팀 프로젝트)',
         summary: '개인정보 암호화 저장, 개인 일정 관리, 팀 일정 공유, 웹소켓 기반 팀 채팅, 접근 로그 관리 기능을 구현한 협업 일정 관리 플랫폼',
-        image: '/img/dotogether/메인화면.PNG'
+        image: '/img/dotogether/업무관리수정.gif'
     },
     {
         title: 'Carlpion(팀 프로젝트)',
         summary: '전기차 예약, 결제, 커뮤니티 게시판, JWT 기반 로그인 등 사용자 편의성과 보안을 고려한 웹 플랫폼',
-        image: '/img/Carlpion.PNG'
+        image: '/img/carlpion/차량렌트.gif'
     },
     // {
     //     title: 'Korplace(팀 프로젝트)',

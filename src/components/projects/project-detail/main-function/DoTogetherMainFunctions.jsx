@@ -67,6 +67,7 @@ const DoTogetherMainFunctions = () => (
         </Accordion>
 
         <Accordion title={'팀 업무 관리 ★★★'}>
+            <img src="/img/dotogether/업무관리수정.gif" alt="" />
             <Accordion title={'웹 소켓 통신 연결'}>
                 <ol type='a'>
                     <li>useWebSocket 훅을 사용한 웹 소켓 통신 요청</li>
@@ -192,7 +193,35 @@ const DoTogetherMainFunctions = () => (
                 <p>-&gt; 내가 메시지를 보낸 경우(`isMine === true`)에는 강제로 최하단까지 스크롤 이동</p>
             </ol>
         </Accordion>
-        
+        <Accordion title={'Enum 기반 공통 예외 처리 구조 설계 ★'}>
+            <ol type='a'>
+                <li>예외 코드 관리(ErrorCode 정의)</li>
+                <img src="/img/dotogether/enum/예외처리1.PNG" alt="" style={{width : "500px"}}/>
+                <p>
+                    → 비즈니스 로직에서 발생할 수 있는 예외 상황을 <code>ErrorCode</code> enum으로 정의해 코드와 메시지를 일관되게 관리할 수 있도록 구성
+                </p>
+
+                <li>사용자 정의 예외 클래스(CustomException)</li>
+                <img src="/img/dotogether/enum/예외처리2.PNG" alt="" style={{width : "400px"}}/>
+                <p> 
+                    → <code>ErrorCode</code>를 인자로 받아 메시지와 코드를 설정할 수 있는 <code>CustomException</code> 클래스를 구현하여, 
+                    예외를 직관적이고 구조적으로 처리
+                </p>
+
+                <li>전역 예외 처리기(GlobalExceptionHandler)</li>
+                <img src="/img/dotogether/enum/예외처리3.PNG" alt="" style={{width : "550px"}}/>
+                <p>
+                    → <code>@RestControllerAdvice</code>를 활용해 전역에서 발생하는 <code>CustomException</code>을 통합적으로 처리하고, 
+                    웹서버로 통일된 에러 응답
+                </p>
+
+                <li>예외 발생 예시</li>
+                <img src="/img/dotogether/enum/예외처리4.PNG" alt="" style={{width : "450px"}}/>
+                <p>
+                    → 검증에 실패한 경우 정의된 에러코드 <code>MAX_USER_TEAMS_EXCEEDED</code>를 전달해 <code>CustomException</code>을 발생
+                </p>
+            </ol>
+        </Accordion>
     </ul>
 );
 

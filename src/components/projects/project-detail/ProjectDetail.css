@@ -23,11 +23,22 @@
     line-height: 1.7;
     word-break: keep-all;
 }
-
 .project-links {
     display: flex;
     gap: 14px;
+    margin-bottom: 10px;
+}
+.project-deploy{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
     margin-bottom: 30px;
+}
+.id-pwd{
+    padding-top: 6px;
+}
+.project-deploy p{
+    font-size: 14px;
 }
 
 .project-link {

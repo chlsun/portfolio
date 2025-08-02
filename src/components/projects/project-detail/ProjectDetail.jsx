@@ -65,6 +65,8 @@ const projects = [
         front: 'https://github.com/haruki975-gif/Orange_FRONT',
         back: 'https://github.com/haruki975-gif/Orange_BACK',
         deploy: 'https://dotogether.shop',
+        id: 'user1234',
+        password: '!user1234',
         period: '2025.06.12 ~ 2025.07.09',
         overview: '본 프로젝트는 전기차 공유 예약 서비스와 커뮤니티 기능을 통합한 웹 플랫폼을 구축하는 것을 목표로 합니다. 사용자 간의 정보 교류와 차량 예약을 하나의 시스템에서 지원함으로써사용자의 편의성과 접근성을 높이고자 합니다. <br/> React를 기반으로 직관적이고 반응성 높은 UI/UX를 설계하였으며, Spring Boot와 JWT 기반 인증 방식을 도입하여 보안성과 유지보수성을 강화하였습니다.<br/>또한, 전기차 중심의 공유 시스템을 통해 친환경적 이동 수단의 접근성을 높이고, 지속 가능한 모빌리티 생태계 조성에 기여하는 것을 목표로 합니다.',
         features: [
@@ -102,7 +104,11 @@ const projects = [
         title: 'Carlpion(팀 프로젝트)',
         front: 'https://github.com/chlsun/Carlpion_client.git',
         back: 'https://github.com/chlsun/Carlpion.git',
-        deploy: 'https://www.yoonseo.shop/',
+        deploy: 'https://www.carlpion.store/',
+        id: 'user1234',
+        password: '!user1234',
+        adminId: 'cpadmin8184',
+        adminPwd: 'kM{2sq$q@g%9g`-',
         period: '2025.04.09 ~ 2025.05.12',
         overview: '본 프로젝트는 전기차 공유 예약 서비스와 커뮤니티 기능을 통합한 웹 플랫폼을 구축하는 것을 목표로 합니다. </br>사용자 간의 정보 교류와 차량 예약을 하나의 시스템에서 지원함으로써사용자의 편의성과 접근성을 높이고자 합니다. </br>React를 기반으로 직관적이고 반응성 높은 UI/UX를 설계하였으며, Spring Boot와 JWT 기반 인증 방식을 도입하여 보안성과 유지보수성을 강화하였습니다.</br> 또한, 전기차 중심의 공유 시스템을 통해 친환경적 이동 수단의 접근성을 높이고, 지속 가능한 모빌리티 생태계 조성에 기여하는 것을 목표로 합니다.',
         features: [
@@ -157,9 +163,15 @@ const ProjectDetail = () => {
             <h1 className="title">{project.title}</h1>
             <div className="project-info-section">
                 <div className="project-links">
-                    <a href={project.deploy} target="_blank" rel="noopener noreferrer" className="project-link">배포 주소</a>
                     <a href={project.front} target="_blank" rel="noopener noreferrer" className="project-link">Front GitHub</a>
                     <a href={project.back} target="_blank" rel="noopener noreferrer" className="project-link">Back GitHub</a>
+                </div>
+                <div className='project-deploy'>
+                    <a href={project.deploy} target="_blank" rel="noopener noreferrer" className="project-link">배포 주소</a>
+                    <div className="id-pwd">
+                        <p>(사용자) 아이디: <b>{project.id}</b> / 비밀번호: <b>{project.password}</b></p>
+                        {project.adminId && <p>(관리자) 아이디: <b>{project.adminId}</b> / 비밀번호: <b>{project.adminPwd}</b></p>}
+                    </div>
                 </div>
                 <div className="project-period">개발 기간: {project.period}</div>
                 <div

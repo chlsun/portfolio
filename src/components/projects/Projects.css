@@ -11,7 +11,6 @@
 .carousel-slick-full {
     width: 100%;
     max-width: 80%; /* 더 넓게 */
-    max-height: 70vh;     /* 섹션의 70% 높이 */
     margin: 0 auto;
     display: block;
     position: relative;
@@ -27,8 +26,8 @@
     padding: 40px 40px 20px;
     min-width: 1300px;
     max-width: 1300px;
-    min-height: 90%;
-    height: 90%; /* 슬라이드 높이 크게 */
+    min-height: 80%;
+    height: 80%; /* 슬라이드 높이 크게 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +42,7 @@
 
 .project-thumb-large {
     width: 90%;
-    max-width: 90%;
+    max-width: 80%;
     height: 90%;
     object-fit: cover;
     margin-bottom: 28px;
@@ -89,5 +88,8 @@
 .slick-track {
     display: flex !important;
     align-items: center;
+}
+.slick-dots{
+    bottom: -40px !important;
 }
 
