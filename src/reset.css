@@ -27,3 +27,16 @@ input::placeholder {
 #root{
   position: relative;
 }
+
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  background-color: #ffffff;
+  color: #2a3a5a;
+}
+.section{
+  background-color: #d5d9e0;
+}

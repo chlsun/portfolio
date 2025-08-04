@@ -1,95 +1,71 @@
-.projects-full {
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #eff5fd;
-    padding: 100px 24px 80px;
+.projects-section {
+  background-color: #f7f9fc;
+  padding: 100px 48px 80px;
 }
 
-
-.carousel-slick-full {
-    width: 100%;
-    max-width: 80%; /* 더 넓게 */
-    margin: 0 auto;
-    display: block;
-    position: relative;
-}
-.slick-slider, .slick-list, .slick-track{
-    max-height: 100%;
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.project-card-large {
-    background: #fff;
-    border-radius: 22px;
-    box-shadow: 0 4px 24px #a7c7ff33;
-    padding: 40px 40px 20px;
-    min-width: 1300px;
-    max-width: 1300px;
-    min-height: 80%;
-    height: 80%; /* 슬라이드 높이 크게 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    transition: box-shadow 0.2s, transform 0.2s;
-    justify-content: center;
+.project-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
 }
 
-.project-card-large > h2{
-    margin-bottom: 20px;
+.project-card:hover {
+  transform: translateY(-6px);
 }
 
-.project-thumb-large {
-    width: 90%;
-    max-width: 80%;
-    height: 90%;
-    object-fit: cover;
-    margin-bottom: 28px;
-    box-shadow: 0 2px 12px #86868656;
+.project-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-/* 화살표 버튼 더 진하게, 크기 키움 */
-.carousel-arrow.slick-prev, 
-.carousel-arrow.slick-next {
-    background: #5164c0 !important;
-    border: none;
-    border-radius: 50%;
-    width: 34px;
-    height: 34px;
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    box-shadow: 0 4px 16px #3a5aff44;
-    transition: background 0.2s, transform 0.2s;
-    opacity: 0.92;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.carousel-arrow > img{
-    width: 70%;
-    height: 70%;
+.project-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.slick-prev:before, .slick-next:before{
-    display: none;
+.project-info h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #2a3a5a;
 }
 
-/* slick-slide, slick-track은 그대로 유지 */
-.slick-slide {
-    display: flex !important;
-    justify-content: center;
-}
-.slick-track {
-    display: flex !important;
-    align-items: center;
-}
-.slick-dots{
-    bottom: -40px !important;
+.project-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #495057;
 }
 
+.project-info a {
+  font-size: 14px;
+  color: #4a77ff;
+  font-weight: 600;
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+
+.project-info a:hover {
+  color: #244edb;
+}
+.view-detail {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 15px;
+  color: #6499ff;
+  font-weight: 500;
+}
+.project-card:hover .view-detail {
+  text-decoration: underline;
+}

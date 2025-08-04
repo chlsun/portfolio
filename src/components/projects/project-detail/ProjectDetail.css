@@ -171,30 +171,24 @@
 }
 
 .back-main-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(58, 90, 255, 0.12);
-    color: #3a5aff;
-    border: 1.5px solid #3a5aff;
-    border-radius: 12px;
-    padding: 10px 22px;
-    font-weight: 700;
-    font-size: 17px;
-    cursor: pointer;
-    box-shadow: 0 2px 12px #a7c7ff22;
-    transition: background 0.18s, color 0.18s, border 0.18s;
-    margin-bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  color: #3a5aff;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 28px;
+  padding: 0;
 }
 
 .back-main-btn:hover {
-    background: #3a5aff;
-    color: #fff;
-    border-color: #1a2a4a;
+  text-decoration: underline;
 }
 
 .back-arrow {
-    font-size: 22px;
-    font-weight: 900;
-    margin-right: 2px;
+  font-size: 18px;
+  font-weight: 700;
 }

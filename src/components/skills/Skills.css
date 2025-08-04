@@ -1,135 +1,74 @@
-.title {
-    font-size: 42px;
-    font-weight: 800;
-    color: #2a3a5a;
-    margin-bottom: 38px;
-    letter-spacing: 2px;
-    text-align: center;
-    border-bottom: 2px solid #e0eaff;
-    padding-bottom: 30px;
-    width: 100%;
-    max-width: 400px;
-    background: none;
-    box-shadow: none;
-    margin-left: auto;
-    margin-right: auto;
+.skills-section {
+  background-color: #f7f9fc;
+  padding: 100px 48px 80px;
 }
 
-.skills-full {
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 32px;
-    background: #ffffff; /* AboutMe와 다른 은은한 파스텔톤 */
+.inner {
+  max-width: 1200px;
+    width: 1200px;
+  margin: 0 auto;
 }
 
-.skills-container.no-img {
-    width: 100%;
-    max-width: 1100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 32px;
-    margin: 0 auto;
-    box-sizing: border-box;
+.section-title {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  color: #2a3a5a;
+  border-bottom: 2px solid #f0f5ff;
+  padding-bottom: 20px;
+  margin-bottom: 48px;
 }
 
-/* 카테고리별 상단 컬러 포인트 */
-.skill-category {
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 12px #0002;
-    padding: 24px 18px 18px 18px;
-    min-width: 220px;
-    flex: 1 1 220px;
-    max-width: 260px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    transition: box-shadow 0.2s;
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
 }
 
-.skill-category::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 7px;
-    border-radius: 14px 14px 0 0;
-    background: #a7c7ff;
-    opacity: 0.7;
+.skill-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #00000015;
+  padding: 24px 28px;
+  max-width: 240px;
+  flex: 1 1 220px;
+  transition: transform 0.2s;
 }
 
-.skill-category:nth-child(2)::before { background: #ffd1a7; }
-.skill-category:nth-child(3)::before { background: #a7ffd1; }
-.skill-category:nth-child(4)::before { background: #d1a7ff; }
-.skill-category:nth-child(5)::before { background: #a7ffe3; }
-
-.skill-category:hover {
-    box-shadow: 0 4px 20px #0003;
+.skill-card:hover {
+  transform: translateY(-4px);
 }
 
-.skill-category h2 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #2a3a5a;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
-    border-bottom: none;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 6px;
-    margin-top: 10px;
+.skill-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #2a3a5a;
 }
 
-.skill-list-text {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.skill-text-item {
-    background: linear-gradient(90deg, #e0eaff 60%, #f3f6ff 100%);
-    color: #2a3a5a;
-    font-size: 15px;
-    font-weight: 700;
-    border-radius: 8px;
-    padding: 8px 18px;
-    margin: 2px 0;
-    box-shadow: 0 2px 8px #b3b3e022;
-    border: 1px solid #dbeaff;
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    letter-spacing: 0.5px;
-    position: relative;
+.skill-list li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2a3a5a;
 }
 
-.skill-text-item::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #a7c7ff;
-    opacity: 0.5;
-}
-
-.skill-text-item:hover {
-    background: linear-gradient(90deg, #b3d1ff 60%, #e0eaff 100%);
-    color: #1a2a4a;
-    transform: scale(1.08);
-    box-shadow: 0 4px 16px #a7c7ff44;
-    border-color: #a7c7ff;
+.bullet {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }

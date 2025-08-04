@@ -4,11 +4,11 @@ import Skills from "./skills/Skills";
 
 const MainPage = () =>{
     return(
-        <>
+        <main className="main-page">
             <About/>
             <Skills/>
             <Projects/>
-        </>
+        </main>
     )
 }
 export default MainPage;

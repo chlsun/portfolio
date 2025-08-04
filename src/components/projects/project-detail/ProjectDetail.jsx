@@ -87,15 +87,14 @@ const projects = [
         ],
         tech: {
             ProgrammingLanguages: ['Java', 'JavaScript'],
-            Markup: ['HTML', 'CSS'],
-            Frameworks: ['Spring Boot', 'Spring Security', 'React'],
+            Frontend: ['React', 'HTML', 'CSS', 'Axios', 'react-dnd'],
+            BackendFrameworks: ['Spring Boot', 'Spring Security'],
             Database: ['Oracle', 'MyBatis', 'JDBC', 'DBMS_CRYPTO'],
-            Communication: ['spring-websocket', 'AXIOS', 'REST API'],
-            Deployment: ['AWS', 'Docker', 'S3'],
+            Communication: ['REST API', 'WebSocket (spring-websocket)'],
+            "Deployment & DevOps": ['AWS', 'S3', 'Docker'],
             VersionControl: ['Git', 'GitHub'],
             Tools: ['STS4', 'VS Code', 'Postman', 'DBeaver'],
-            Collaboration: ['Notion', 'Figma', 'Slack'],
-            Library: ['react-dnd']
+            Collaboration: ['Notion', 'Figma', 'Slack']
         },
         architecture: '/img/dotogether/아키텍쳐.png',
         flow: '/img/dotogether/DoTogether_UseCase.png',
@@ -120,15 +119,20 @@ const projects = [
         ],
         tech: {
             ProgrammingLanguages: ['Java', 'JavaScript'],
-            Markup: ['HTML', 'CSS'],
-            Frameworks: ['Spring Boot', 'Spring Security', 'React'],
+            Frontend: ['React', 'HTML', 'CSS', 'Axios'],
+            BackendFrameworks: ['Spring Boot', 'Spring Security'],
             Database: ['Oracle', 'MyBatis', 'JDBC'],
-            Communication: ['AXIOS', 'REST API'],
-            Deployment: ['GCP', 'Docker', 'Firebase Hosting', 'Firebase Storage'],
+            Communication: ['REST API'],
+            "Deployment & DevOps": ['GCP', 'Docker', 'Firebase Hosting', 'Firebase Storage'],
             VersionControl: ['Git', 'GitHub'],
             Tools: ['STS4', 'VS Code', 'Postman', 'DBeaver'],
             Collaboration: ['Notion', 'Figma', 'Slack'],
-            ExternalAPI: ['PortOne API (결제)', 'Kakao Maps API (지도)', 'Google OAuth (로그인)', '서울시 공공데이터 포털 (공영주차장 정보)']
+            ExternalAPI: [
+            'PortOne API (결제)',
+            'Kakao Maps API (지도)',
+            'Google OAuth (로그인)',
+            '서울시 공공데이터 포털 (공영주차장 정보)'
+            ]
         },
         architecture: '/img/carlpion/아키텍쳐.png',
         flow: '/img/carlpion/Carlpion_UseCase.png',
