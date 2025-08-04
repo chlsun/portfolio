@@ -22,7 +22,9 @@
 .project-card:hover {
   transform: translateY(-6px);
 }
-
+.project-image{
+  padding: 30px 30px 0;
+}
 .project-image img {
   width: 100%;
   height: auto;
