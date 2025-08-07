@@ -36,6 +36,17 @@ const DoTogetherTroubleshooting = () => (
                 -&gt; 이렇게 하면 <b>최초 요청 하나만 성공하고</b>, 나머지는 실패하여 예외 처리됨<br />
                 -&gt; 실패한 요청은 <b>예외 메시지를 응답</b>
             </p>
+            <h2>배운 점</h2>
+            <p>
+                - 실시간 웹소켓 환경에서는 <b>동시성 문제</b>가 언제든지 발생할 수 있으며, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;단순한 update 로직만으로는 <b>데이터 무결성</b>을 보장할 수 없다는 것을 깨달음<br /><br />
+
+                - <b>낙관적 잠금(Optimistic Locking)</b>을 통해 <b>충돌 제어를 DB 차원에서 처리</b>할 수 있었고, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;비즈니스 로직을 더 안정적으로 설계하는 방법을 익힘<br /><br />
+
+                - 또한, <b>UI는 서버 응답에 기반하여 신뢰성 있게 동작해야 함</b>을 인지했고, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;성공한 응답만 클라이언트에 반영하도록 처리하는 중요성을 배움
+            </p>
         </Accordion>
         <Accordion title={'웹 소켓 통신 연결 문제'}>
             <img src="/img/dotogether/trouble/에러코드1.PNG" alt="" />
