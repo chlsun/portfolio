@@ -77,6 +77,54 @@ const DoTogetherTroubleshooting = () => (
             <img src="/img/dotogether/trouble/에러코드5.PNG" alt="" style={{width : "600px"}}/>
         </Accordion>
 
+        <Accordion title={'@Transactional로 인한 트랜잭션 롤백 문제'}>
+            <img src="/img/dotogether/trouble/트랜잭션문제.gif" alt="" />
+
+            <h2>상황</h2>
+            <img src="/img/dotogether/trouble/트랜잭션문제2.png" alt="" style={{width : "600px"}}/>
+            <p>
+                -&gt; 팀원이 꽉 찼거나, 신청자가 이미 가입된 팀 수를 초과한 경우<br />
+                -&gt; 검증에 걸리면 <code>deleteTeamApplication</code>로 신청 기록을 삭제한 뒤 예외를 발생시킴<br />
+                -&gt; 하지만 실제로는 <b>신청 기록이 삭제되지 않고 계속 남아 있는 문제</b> 발생
+            </p>
+
+            <h2>원인 분석</h2>
+            <img src="/img/dotogether/trouble/트랜잭션문제1.png" alt="" style={{width : "600px"}}/>
+            <p>
+                -&gt; 신청 검증을 통과하면 <code>팀원 추가</code>와 <code>신청 기록 삭제</code> 두 개의 쿼리가 실행됨<br />
+                -&gt; 이 두 작업은 데이터의 정합성과 원자성을 보장하기 위해 <code>@Transactional</code>로 묶어야 함<br />
+                -&gt; 그러나 <b>@Transactional의 특성상 예외 발생 시 전체 작업이 롤백</b>되어<br />
+                &nbsp;&nbsp;&nbsp;<code>deleteTeamApplication</code> 역시 함께 롤백됨 → 신청 기록이 남게 됨
+            </p>
+
+            <h2>문제 해결</h2>
+            <p>
+                -&gt; 이 문제를 해결하기 위한 방법은 크게 두 가지가 있음:
+            </p>
+
+            <p>
+                <b>① 특정 예외 발생 시 롤백되지 않도록 설정</b><br />
+                &nbsp;&nbsp;&nbsp;- <code>@Transactional(noRollbackFor = DeleteExclusiveException.class)</code>와 같은 방식 사용<br />
+                &nbsp;&nbsp;&nbsp;- <code>deleteTeamApplication()</code> 호출 전용 예외를 따로 정의하고, 그 예외는 롤백 대상에서 제외<br />
+                &nbsp;&nbsp;&nbsp;- 단점: <b>비즈니스 로직에서 일부 예외만 롤백 제외 처리하기 위한 예외 설계가 필요</b>
+            </p>
+
+            <p>
+                <b>② 트랜잭션을 분리하여 처리 (선택한 방식)</b><br />
+                &nbsp;&nbsp;&nbsp;- <code>deleteTeamApplication()</code> 메서드를 별도의 클래스로 분리<br />
+                &nbsp;&nbsp;&nbsp;- <code>@Transactional(propagation = Propagation.REQUIRES_NEW)</code>로 <b>독립적인 트랜잭션</b>으로 동작하도록 설정<br />
+                &nbsp;&nbsp;&nbsp;- 상위 트랜잭션에서 예외가 발생해도, <b>신청 기록 삭제는 롤백되지 않고 그대로 커밋됨</b>
+            </p>
+
+            <img src="/img/dotogether/trouble/트랜잭션문제3.png" alt="" style={{width : "600px"}}/>
+            <img src="/img/dotogether/trouble/트랜잭션문제4.png" alt="" style={{width : "600px"}}/>
+            <p>
+                -&gt; 위 두 가지 방법을 비교한 결과, <b>두 번째 방식인 트랜잭션 분리 방식</b>을 선택함<br />
+                -&gt; 트랜잭션의 전파 속성을 분리함으로써, <b>예외 발생 여부와 관계없이 신청 기록 삭제 쿼리는 항상 커밋</b>되도록 처리할 수 있었음<br />
+                -&gt; 또한 불필요한 커스텀 예외 클래스를 정의하지 않아도 되어 <b>도메인 설계를 단순하고 명확하게 유지</b>할 수 있었음
+            </p>
+        </Accordion>
+
         <Accordion title={'무한 스크롤 조회 시 정렬 문제'}>
             <img src="/img/dotogether/trouble/무한스크롤 조회 문제.gif" alt="" />
             <h2>상황</h2>
